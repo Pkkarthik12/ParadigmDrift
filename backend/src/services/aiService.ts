@@ -31,9 +31,9 @@ export const generateAnalogy = async (problem: string) => {
     };
   }
 
-  if (provider === 'GOOGLE_GEMINI') {
+    if (provider === 'GOOGLE_GEMINI') {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
     const prompt = `
       You are the ParadigmDrift Serendipity Engine. 
@@ -47,7 +47,7 @@ export const generateAnalogy = async (problem: string) => {
       3. Connect it to the user's problem via an "Oblique Strategy".
       4. Provide one "Actionable Insight" that translates the metaphor back to reality.
 
-      Format your response as a JSON object:
+      Respond ONLY with a valid JSON object.
       {
         "domain": "${randomDomain}",
         "analogy": "...",
@@ -60,7 +60,8 @@ export const generateAnalogy = async (problem: string) => {
     const text = response.text();
     
     // Clean up potential markdown formatting from LLM response
-    const jsonString = text.replace(/```json|```/g, '').trim();
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    const jsonString = jsonMatch ? jsonMatch[0] : text;
     return JSON.parse(jsonString);
   }
 

@@ -2,8 +2,6 @@
 
 ![ParadigmDrift Banner](https://via.placeholder.com/1200x400?text=ParadigmDrift+|+The+Serendipity+Engine)
 
-> "To solve a problem, you must first forget you have it."
-
 **ParadigmDrift** is an AI-powered lateral thinking tool designed to break creative ruts. Instead of providing direct answers, it uses advanced AI to draw analogies from completely unrelated fields—like Mycology, Orbital Mechanics, or 19th-century Architecture—to force a fresh perspective on your most stubborn challenges.
 
 ## 🚀 Features

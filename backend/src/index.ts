@@ -5,7 +5,8 @@ import dotenv from 'dotenv';
 import path from 'path';
 import driftRoutes from './routes/drift.js';
 
-// Initialize environment variables
+// Initialize environment variables - look in current dir or one level up
+dotenv.config();
 dotenv.config({ path: path.resolve(process.cwd(), '../.env') });
 
 const app = express();

@@ -30,9 +30,12 @@ function App() {
         body: JSON.stringify({ problem }),
       });
 
-      if (!response.ok) throw new Error('Failed to reach the engine');
-
       const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'The engine failed to pivot.');
+      }
+
       setResult(data);
     } catch (err: any) {
       setError(err.message);

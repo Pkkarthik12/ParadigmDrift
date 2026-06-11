@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getDriftAnalogy } from '../controllers/driftController.js';
+import { getDriftAnalogy } from '../controllers/driftController';
 
 const router = Router();
 

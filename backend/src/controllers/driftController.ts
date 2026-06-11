@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { generateAnalogy } from '../services/aiService.js';
+import { generateAnalogy } from '../services/aiService';
 
 export const getDriftAnalogy = async (req: Request, res: Response) => {
   try {

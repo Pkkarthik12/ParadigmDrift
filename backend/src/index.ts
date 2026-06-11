@@ -3,7 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import path from 'path';
-import driftRoutes from './routes/drift.js';
+import driftRoutes from './routes/drift';
 
 // Initialize environment variables - look in current dir or one level up
 dotenv.config();

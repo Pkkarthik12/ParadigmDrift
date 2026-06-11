@@ -24,6 +24,6 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'active', message: 'ParadigmDrift API is operational' });
 });
 
-app.listen(PORT, () => {
-  console.log(`[ParadigmDrift] Server running on port ${PORT}`);
+app.listen(Number(PORT), '0.0.0.0', () => {
+  console.log(`[ParadigmDrift] Server running on http://localhost:${PORT}`);
 });
